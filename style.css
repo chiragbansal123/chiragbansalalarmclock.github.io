@@ -1,0 +1,285 @@
+body{
+    margin: 0;
+}
+#display-time{
+    width:100%;
+    display: flex;
+    flex-direction: column;
+}
+#show-time{
+    margin-top:1rem;
+    text-align:center;
+    font-size:70px;
+}
+#alarm{
+    background:#e1f5f5;
+    display: flex;
+    flex-direction: column;
+}
+#two-cols{
+    display: flex;
+    justify-content: space-around;
+}
+#show-alarms{
+    width:40%;
+    height: auto;
+    display: inline-block;
+}
+#default-alarm{
+    width:45%;
+    height: auto;
+    display: inline-block;
+    display: flex;
+    flex-direction: column;
+    margin-bottom:1.5%;
+}
+header{
+    background:lightgray;
+    color:white;
+    text-align: center;
+    font-size: 1.6rem;
+    display: flex;
+    justify-content: space-evenly;
+}
+header h3{
+    color: black;
+}
+#tools{
+    margin-top: 1%;
+    border: none;
+    font-size: 1.3rem;
+    background: transparent;
+}
+#show-alarms select{
+    border: none;
+    background: transparent;
+    color:black;
+}
+#show-alarms input{
+    border: none;
+    background-color: black;
+    color: white;
+}
+#list-alarms{
+    margin-top:2%;
+    display:flex;
+    justify-content: space-around;
+    flex-direction: column;
+}
+#setalarmcardmenu{
+    margin-bottom: 1%;
+}
+#delete-alarm{
+    margin-left: 10%;
+}
+#main-part{
+    background-color: #e1f5f5;
+    height:90%;
+}
+#bell{
+    width:450px;
+    height:100px;
+    border:1px solid #000;
+    position:fixed;
+    background-color: greenyellow;
+    margin-top: 1%;
+    margin-left: 33%;
+    display: none;
+}
+.setalarmheading{
+    padding-left: 15%;
+}
+a:link{
+    text-decoration: none;
+}
+a span{
+    color:blue;
+}
+#bell h2{
+    text-align: center;
+    margin-top: -6%;
+}
+.bell{
+    display:block;
+    width: 40px;
+    height: 40px;
+    font-size: 40px;
+    margin:50px auto 0;
+    color: red;
+    -webkit-animation: ring 4s .7s ease-in-out infinite;
+    -webkit-transform-origin: 50% 4px;
+    -moz-animation: ring 4s .7s ease-in-out infinite;
+    -moz-transform-origin: 50% 4px;
+    animation: ring 4s .7s ease-in-out infinite;
+    transform-origin: 50% 4px;
+}
+/* stopwatch */
+#stopwatch{
+    background-color: #ffa600;
+    color:white;
+    height:80%;
+}
+#stopwatch-display{
+    font-size: 4rem;
+    text-align: center;
+}
+#stopwatch #stopwatch-buttons{
+    margin-left: 38%;
+}
+#stopwatch button{
+    margin-left: 2%;
+    font-size: 1.3rem;
+    background-color:transparent;
+    border:1px solid white;
+    color: white;
+    padding: 3%;
+}
+#stopwatch button:hover{
+    background-color:white;
+    color:#ffa600;
+}
+/* bell icon when the alarm ring */
+  @-webkit-keyframes ring {
+    0% { -webkit-transform: rotateZ(0); }
+    1% { -webkit-transform: rotateZ(30deg); }
+    3% { -webkit-transform: rotateZ(-28deg); }
+    5% { -webkit-transform: rotateZ(34deg); }
+    7% { -webkit-transform: rotateZ(-32deg); }
+    9% { -webkit-transform: rotateZ(30deg); }
+    11% { -webkit-transform: rotateZ(-28deg); }
+    13% { -webkit-transform: rotateZ(26deg); }
+    15% { -webkit-transform: rotateZ(-24deg); }
+    17% { -webkit-transform: rotateZ(22deg); }
+    19% { -webkit-transform: rotateZ(-20deg); }
+    21% { -webkit-transform: rotateZ(18deg); }
+    23% { -webkit-transform: rotateZ(-16deg); }
+    25% { -webkit-transform: rotateZ(14deg); }
+    27% { -webkit-transform: rotateZ(-12deg); }
+    29% { -webkit-transform: rotateZ(10deg); }
+    31% { -webkit-transform: rotateZ(-8deg); }
+    33% { -webkit-transform: rotateZ(6deg); }
+    35% { -webkit-transform: rotateZ(-4deg); }
+    37% { -webkit-transform: rotateZ(2deg); }
+    39% { -webkit-transform: rotateZ(-1deg); }
+    41% { -webkit-transform: rotateZ(1deg); }
+  
+    43% { -webkit-transform: rotateZ(0); }
+    100% { -webkit-transform: rotateZ(0); }
+  }
+  
+  @-moz-keyframes ring {
+    0% { -moz-transform: rotate(0); }
+    1% { -moz-transform: rotate(30deg); }
+    3% { -moz-transform: rotate(-28deg); }
+    5% { -moz-transform: rotate(34deg); }
+    7% { -moz-transform: rotate(-32deg); }
+    9% { -moz-transform: rotate(30deg); }
+    11% { -moz-transform: rotate(-28deg); }
+    13% { -moz-transform: rotate(26deg); }
+    15% { -moz-transform: rotate(-24deg); }
+    17% { -moz-transform: rotate(22deg); }
+    19% { -moz-transform: rotate(-20deg); }
+    21% { -moz-transform: rotate(18deg); }
+    23% { -moz-transform: rotate(-16deg); }
+    25% { -moz-transform: rotate(14deg); }
+    27% { -moz-transform: rotate(-12deg); }
+    29% { -moz-transform: rotate(10deg); }
+    31% { -moz-transform: rotate(-8deg); }
+    33% { -moz-transform: rotate(6deg); }
+    35% { -moz-transform: rotate(-4deg); }
+    37% { -moz-transform: rotate(2deg); }
+    39% { -moz-transform: rotate(-1deg); }
+    41% { -moz-transform: rotate(1deg); }
+  
+    43% { -moz-transform: rotate(0); }
+    100% { -moz-transform: rotate(0); }
+  }
+  
+  @keyframes ring {
+    0% { transform: rotate(0); }
+    1% { transform: rotate(30deg); }
+    3% { transform: rotate(-28deg); }
+    5% { transform: rotate(34deg); }
+    7% { transform: rotate(-32deg); }
+    9% { transform: rotate(30deg); }
+    11% { transform: rotate(-28deg); }
+    13% { transform: rotate(26deg); }
+    15% { transform: rotate(-24deg); }
+    17% { transform: rotate(22deg); }
+    19% { transform: rotate(-20deg); }
+    21% { transform: rotate(18deg); }
+    23% { transform: rotate(-16deg); }
+    25% { transform: rotate(14deg); }
+    27% { transform: rotate(-12deg); }
+    29% { transform: rotate(10deg); }
+    31% { transform: rotate(-8deg); }
+    33% { transform: rotate(6deg); }
+    35% { transform: rotate(-4deg); }
+    37% { transform: rotate(2deg); }
+    39% { transform: rotate(-1deg); }
+    41% { transform: rotate(1deg); }
+  
+    43% { transform: rotate(0); }
+    100% { transform: rotate(0); }
+  }
+#stopAlarm{
+    margin-left: 40%;
+    border:none;
+    background-color:blue;
+    color:white
+}
+/* clock section */
+#clock{
+    margin-top:7%;
+    margin-left:35%;
+    text-align: center;
+    background-color: lightskyblue;
+    width: 40vw;
+    height: 40vw;
+    background: url(clock.png) no-repeat;
+    background-size:60%;
+    position: relative;
+}
+  #hourhand,#minutehand,#secondhand{
+      position: absolute;
+      background:black;
+      border-radius: 10px;
+      transform-origin: bottom;
+  }
+  #hourhand{
+    width: 1.5%;
+    height: 18%;
+    left:29%;
+    top:12%;
+      
+  }
+  #minutehand{
+    width: 0.85%;
+    height: 23%;
+    left:29.5%;
+    top: 6%;
+
+  }
+  #secondhand{
+    width: 0.5%;
+    height: 23%;
+    left:29.5%;
+    top: 7%;
+  }
+  /*countdown section */
+
+
+  #countdown{
+    width:100%;
+    height:80%;
+  }
+  /* countdown time */
+  #mindisplay,#secdisplay{
+      margin-top: 1%;
+      font-size: 3rem;
+  }
+  
+  #countdown-main{
+    font-size:1.25rem;
+    margin-top: 10%;
+  }
