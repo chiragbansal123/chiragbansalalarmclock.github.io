@@ -1,0 +1,136 @@
+<html>
+
+<head>
+    <title>Alarm Clock</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+</head>
+<body onload="showtime()">
+    <header>
+        <h3>Alarm Clock</h3>
+        <span>
+            <!-- dropdown menu to select b/w alarm,stopwatch and clock-->
+            <select name="tools" id="tools"
+                onchange="{goToSelectedTools();if(this.options[this.selectedIndex].onclick != null){this.options[this.selectedIndex].onclick(this);}}">
+                <option onclick="goToSelectedTools('alarm')" value="Alarm">Alarm</option>
+                <option onclick="goToSelectedTools('stopwatch')" value="Stopwatch">Stopwatch</option>
+                <option onclick="goToSelectedTools('clock')" value="Clock">Clock</option>
+                <option onclick="goToSelectedTools('countdown')" value="Countdown">Countdown</option>
+            </select>
+            </select>
+        </span>
+
+    </header>
+    <!-- Alarm -->
+    <div id="alarm">
+        <nav id="display-time">
+            <!-- below p shows the current time-->
+            <p id="show-time">
+
+            </p>
+            <!--this is bell section which will ring if the current time is equals to set alarm time-->
+            <div id="bell">
+                <h2>Alarm is Ringing <span class="bell fa fa-bell"></span></h2>
+                <!--This button is to stop the alarm-->
+                <button id="stopAlarm" value="Stop Alarm" onclick="stopAlarm()">Stop Alarm</button>
+            </div>
+        </nav>
+        <!--this is the main part which includes setting alarms,showing set alarms-->
+        <div id="main-part">
+            <div id="two-cols">
+                <div id="show-alarms">
+                    <h5 class="setalarmheading">Set Alarms</h5>
+                    <select name='sethrs' id="hr"></select>
+                    <select name='setmins' id="minn"></select>
+                    <select name='setsecs' id="secc"></select>
+                    <select id="meridian">
+                        <option value="AM">AM</option>
+                        <option value="PM">PM</option>
+                    </select>
+                    <input type="submit" id="setAlarm" value="Set Alarm">
+                    <div id="list-alarms">
+                        <!--this is showing the set alarms-->
+                        <h5 class="setalarmheading">Your Set Alarms</h5>
+
+                    </div>
+
+                </div>
+                <!--this contains the default alarms-->
+                <div id="default-alarm" class="d-grid gap-3">
+                    <h5 id="recent-alarms">Default Alarms</h5>
+                    <a href="#">
+                        <span onclick="createAlarm('06:00:00 AM')">06.00 AM</span>
+                    </a>
+                    <a href="#">
+                        <span onclick="createAlarm('07:00:00 PM')">7:00 PM</span>
+                    </a>
+                    <a href="#">
+                        <span onclick="createAlarm('11:00:00 PM')">11:00 PM</span>
+                    </a>
+                    <a href="#">
+                        <span onclick="createAlarm('04:00:00 AM')">04:00 AM</span>
+                    </a>
+                    <a href="#">
+                        <span onclick="createAlarm('05:00:00 AM')">05:00 AM</span>
+                    </a>
+                    <a href="#">
+                        <span onclick="createAlarm('09:00:00 PM')">09:00 PM</span>
+                    </a>
+                    <a href="#">
+                        <span onclick="createAlarm('08:30:00 PM')">08:30 PM</span>
+                    </a>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!--this is stopwatch div-->
+    <div id="stopwatch">
+        <div id="stopwatch-timer">
+            <!--this shows stopwatch -->
+            <p id="stopwatch-display">
+                StopWatch<br>
+                <span id="minutes">00:</span><span id="seconds">00:</span><span id="milliseconds">00</span>
+            </p>
+        </div>
+        <div id="stopwatch-buttons">
+            <button id="start" value="Start">Start</button>
+            <button id="stop" value="Stop">Stop</button>
+            <button id="reset" value="Reset">Reset</button>
+        </div>
+    </div>
+    <!--this is clock div-->
+    <div id="clock">
+        <div id="clock-main">
+            <div id="hourhand"></div>
+            <div id="minutehand"></div>
+            <div id="secondhand"></div>
+        </div>
+
+
+    </div>
+    <!--countdown section -->
+    <div id="countdown" class="badge bg-primary">
+        
+        <div id="countdown-main" >
+            <div style="font-size:3rem;text-align:center">Countdown</div><br><br>
+            <select id="min-selector"></select>
+            <select id="sec-selector"></select>
+            <input type="submit" value="Set Countdown" id="setcountdownbtn">
+            <!-- here countdown will be display-->
+            <div id="display-countdown" style="font-size:1.25rem">
+                <span id="mindisplay"></span>
+                <span id="secdisplay"></span>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
